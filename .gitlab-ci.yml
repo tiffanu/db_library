@@ -56,8 +56,8 @@ tasks from 3rd to 11th:
     - echo -e "${LIGHT_RED}>>> Task №3 <<<${NO_COLOUR}"
     - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_ddl.sql" --cat
 
-#    - echo -e "${LIGHT_RED}>>> Task №4-5 <<<${NO_COLOUR}"
-#    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/clubdata_inserts.sql"
+    - echo -e "${LIGHT_RED}>>> Task №4-5 <<<${NO_COLOUR}"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_inserts.sql"
     - echo "Table 'library.Book' contains rows:"
     - python3 ${PYPSQL} --sql="SELECT * FROM library.Book" --verbose
     - echo "Table 'library.Author' contains rows:"
