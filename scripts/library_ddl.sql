@@ -29,9 +29,9 @@ create table if not exists library.Alias_Author (
 );
 
 create table if not exists library.Book_Alias (
-	alias_id integer not null,
 	book_id integer not null,
-		primary key (alias_id, book_id),
+	alias_id integer not null,
+		primary key (book_id, alias_id),
 		foreign key (alias_id) references library.Alias_Author(alias_id) on delete cascade, 
 		foreign key (book_id) references library.Book(book_id) on delete cascade 
 );
@@ -44,7 +44,7 @@ create table if not exists library.Genre (
 create table if not exists library.Book_Genre (
 	book_id integer not null,
 	genre_id integer not null,
-		primary key (genre_id, book_id),
+		primary key (book_id, genre_id),
 		foreign key (genre_id) references library.Genre(genre_id) on delete cascade, 
 		foreign key (book_id) references library.Book(book_id) on delete cascade 
 );
@@ -62,7 +62,7 @@ create table if not exists library.Reserve (
 create table if not exists library.Book_Reserve (
 	book_id integer not null,
 	res_id integer not null,
-		primary key (res_id, book_id),
+		primary key (book_id, res_id),
 		foreign key (res_id) references library.Reserve(res_id), 
 		foreign key (book_id) references library.Book(book_id) 
 );
