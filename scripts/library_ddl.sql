@@ -16,7 +16,7 @@ create table if not exists library.Location (
 create table if not exists library.Author (
 	author_id integer not null primary key,
 	author_name varchar(50) not null,
-	author_surname varchar(50) not null,
+	author_surname varchar(50),
 	birth_date date,
 	death_date date
 );
@@ -52,11 +52,11 @@ create table if not exists library.Book_Genre (
 create table if not exists library.Reserve (
 	res_id integer not null primary key,
 	name varchar(50) not null,
-	surname varchar(50) not null,
-	phone varchar(20) not null,
-	address varchar(100) not null,
-	birth_date date,
-	death_date date
+	surname varchar(50),
+	phone varchar(20),
+	address varchar(100),
+	begin_date date,
+	end_date date
 );
 
 create table if not exists library.Book_Reserve (
