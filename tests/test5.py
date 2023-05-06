@@ -19,7 +19,7 @@ def select_df(select_script, sqlalchemy_conn):
     )
 
 
-def test2(select_df):
+def test5(select_df):
     assert select_df.query("name == 'Альбина'")['surname'].iloc[0] == 'Рухадзе'
     assert select_df.query("name == 'Альбина'")['reserved_books'].iloc[0] == 2
 
