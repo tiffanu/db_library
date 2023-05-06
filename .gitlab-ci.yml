@@ -73,9 +73,7 @@ tasks from 3rd to 11th:
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/test1.py
 
     - echo "Вывести всех посетителей, взявших книги, и отсортировать по дате начала брони"
-    - python3 ${PYPSQL} --sql="select name, surname, begin_date, end_date
-from library.Reserve
-order by begin_date, end_date" --verbose
+    - python3 ${PYPSQL} --sql="select name, surname, begin_date, end_date from library.Reserve order by begin_date, end_date" --verbose
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select2.sql" pytest ${TESTS_DIR}/test2.py
 
 
