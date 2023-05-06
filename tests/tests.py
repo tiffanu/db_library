@@ -18,7 +18,6 @@ def select_df(select_script, sqlalchemy_conn):
     )
 
 
-def test(select_df):
-    assert select_df.query("table_name == 'facilities'")['cnt'].iloc[0] == 9
-    assert select_df.query("table_name == 'members'")['cnt'].iloc[0] == 31
-    assert select_df.query("table_name == 'bookings'")['cnt'].iloc[0] == 4044
+def test1(select_df):
+    assert select_df.query("total_amount == 10")['wardrobe'].iloc[0] == 2
+    assert select_df.query("total_amount == 34")['wardrobe'].iloc[0] == 1
