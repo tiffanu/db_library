@@ -23,5 +23,5 @@ def test1(select_df):
     assert select_df.query("total_amount == 34")['wardrobe'].iloc[0] == 1
 
 def test2(select_df):
-    assert select_df.query("name == Тимур")['surname'].iloc[0] == 'Муцураев'
+    assert select_df.query("name == 'Тимур'")['surname'].iloc[0] == 'Муцураев'
 
