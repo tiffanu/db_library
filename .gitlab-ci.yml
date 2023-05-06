@@ -87,3 +87,7 @@ tasks from 3rd to 11th:
     - echo "Вывести посетителей и кол-во книг, которые они брали. Отсортировать по этому количеству"
     - python3 ${PYPSQL} --sql="select distinct name, surname, count(book_id) over (partition by (name, surname)) as reserved_books from library.Book_Reserve as br join library.Reserve as r on r.res_id = br.res_id order by reserved_books desc" --verbose
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select5.sql" pytest ${TESTS_DIR}/test5.py
+
+    - echo "Для каждого посетителя вывести его самый долгий период (в днях), на который он брал книгу, и название этой книги"
+    - python3 ${PYPSQL} --sql="select distinct on (name, surname) name, surname, title, res_days from (select name, surname, title,  end_date - begin_date as res_days, first_value(end_date - begin_date) over (partition by r.res_id) from library.Reserve as r join library.Book_Reserve as br on br.res_id = r.res_id join library.Book as b on b.book_id = br.book_id) as prt where res_days = first_value" --verbose
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select5.sql" pytest ${TESTS_DIR}/test5.py
