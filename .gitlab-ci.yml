@@ -69,7 +69,11 @@ tasks from 3rd to 11th:
 
     - echo -e "${LIGHT_RED}>>> Task №6-7 <<<${NO_COLOUR}"
     - echo "Вывести все заполненные шкафы (кол-во книг на них больше 9)"
+    - python3 ${PYPSQL} --sql="select sum(amount) as total_amount, wardrobe from library.Book as b join library.Location as l on b book_id = l.book_id group by wardrobe having sum(amount) > 9" --verbose
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/test1.py
+
+    - echo "Вывести всех посетителей, взявших книги, и отсортировать по дате начала брони"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select2.sql" pytest ${TESTS_DIR}/test2.py
 
 
 
