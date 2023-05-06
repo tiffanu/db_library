@@ -69,10 +69,8 @@ tasks from 3rd to 11th:
 
     - echo -e "${LIGHT_RED}>>> Task №6-7 <<<${NO_COLOUR}"
     - echo "Вывести все заполненные шкафы (кол-во книг на них больше 9)"
-    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/tests.py
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/test1.py
 
-    - echo "Вывести все  (кол-во книг на них больше 9)"
-    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select2.sql" pytest ${TESTS_DIR}/tests.py
 
 
 
