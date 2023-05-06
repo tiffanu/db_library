@@ -67,3 +67,9 @@ tasks from 3rd to 11th:
     - echo "Table 'library.Reserve' contains rows:"
     - python3 ${PYPSQL} --sql="SELECT * FROM library.Reserve" --verbose
 
+    - echo -e "${LIGHT_RED}>>> Task №6-7 <<<${NO_COLOUR}"
+    - echo "Table 'library.Reserve' contains rows:"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/tests.py
+
+
+
