@@ -68,8 +68,11 @@ tasks from 3rd to 11th:
     - python3 ${PYPSQL} --sql="SELECT * FROM library.Reserve" --verbose
 
     - echo -e "${LIGHT_RED}>>> Task №6-7 <<<${NO_COLOUR}"
-    - echo "Table 'library.Reserve' contains rows:"
+    - echo "Вывести все заполненные шкафы (кол-во книг на них больше 9)"
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select1.sql" pytest ${TESTS_DIR}/tests.py
+
+    - echo "Вывести все  (кол-во книг на них больше 9)"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select2.sql" pytest ${TESTS_DIR}/tests.py
 
 
 
