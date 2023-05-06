@@ -25,7 +25,7 @@ def test2(select_df):
     assert select_df.query("name == 'Тимур'")['end_date'].iloc[0] == datetime.date(1996, 8, 31)
 
     assert select_df.query("name == 'Артём'")['surname'].iloc[0] == null
-    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 02, 05)
+    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 2, 5)
     assert select_df.query("name == 'Артём'")['end_date'].iloc[0] == datetime.date(2023, 02, 06)
     
     assert select_df.query("name == 'Тимур'")['surname'].iloc[0] == 'Муцураев'
