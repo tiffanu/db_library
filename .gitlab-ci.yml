@@ -84,4 +84,6 @@ tasks from 3rd to 11th:
     - python3 ${PYPSQL} --sql="select author_name, author_surname, title, rank() over (partition by (author_name, author_surname) order by title) as book_number_per_author from library.Author as a join library.Alias_Author as aa on a.author_id = aa.author_id join library.Book_Alias as ba on aa.alias_id = ba.alias_id join library.Book as b on ba.book_id = b.book_id" --verbose
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select4.sql" pytest ${TESTS_DIR}/test4.py
 
-
+    - echo "Вывести посетителей и кол-во книг, которые они брали. Отсортировать по этому количеству"
+    - python3 ${PYPSQL} --sql="select distinct name, surname, count(book_id) over (partition by (name, surname)) as reserved_books from library.Book_Reserve as br join library.Reserve as r on r.res_id = br.res_id order by reserved_books desc" --verbose
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select5.sql" pytest ${TESTS_DIR}/test5.py
