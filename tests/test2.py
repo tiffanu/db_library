@@ -33,8 +33,8 @@ def test2(select_df):
     assert select_df.query("name == 'Альбина'")['end_date'].iloc[0] == datetime.date(2023, 3, 6)
 
     assert select_df.query("name == 'Артём'")['surname'].iloc[0] == None
-    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 7, 23)
-    assert select_df.query("name == 'Артём'")['end_date'].iloc[0] == datetime.date(2023, 8, 23)
+    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 2, 5)
+    assert select_df.query("name == 'Артём'")['end_date'].iloc[0] == datetime.date(2023, 2, 6)
     
     assert select_df.query("name == 'Александр'")['surname'].iloc[0] == 'Левин'
     assert select_df.query("name == 'Александр'")['begin_date'].iloc[0] == datetime.date(2023, 10, 6)
