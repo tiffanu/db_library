@@ -21,3 +21,7 @@ def select_df(select_script, sqlalchemy_conn):
 def test1(select_df):
     assert select_df.query("total_amount == 10")['wardrobe'].iloc[0] == 2
     assert select_df.query("total_amount == 34")['wardrobe'].iloc[0] == 1
+
+def test2(select_df):
+    assert select_df.query("name == Тимур")['surname'].iloc[0] == 'Муцураев'
+
