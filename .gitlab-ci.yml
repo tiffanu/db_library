@@ -80,6 +80,8 @@ tasks from 3rd to 11th:
     - python3 ${PYPSQL} --sql="select rank() over (order by count(b.book_id) desc) as rank, genre_name,  count(b.book_id) from library.Book as b join library.Book_Genre as bg on bg.book_id = b.book_id join library.Genre as g on g.genre_id = bg.genre_id group by genre_name" --verbose
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select3.sql" pytest ${TESTS_DIR}/test3.py
 
-
+    - echo "Вывести авторов с порядковым номером их книг из библиотеки"
+    - python3 ${PYPSQL} --sql="select author_name, author_surname, title, rank() over (partition by (author_name, author_surname) order by title) as book_number_per_author from library.Author as a join library.Alias_Author as aa on a.author_id = aa.author_id join library.Book_Alias as ba on aa.alias_id = ba.alias_id join library.Book as b on ba.book_id = b.book_id" --verbose
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_selects/select4.sql" pytest ${TESTS_DIR}/test4.py
 
 
