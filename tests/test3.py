@@ -23,18 +23,11 @@ def test3(select_df):
     assert select_df.query("genre_name == 'Роман'")['rank'].iloc[0] == 1
     assert select_df.query("genre_name == 'Роман'")['count'].iloc[0] == 4
 
-    assert select_df.query("name == 'Артём'")['surname'].iloc[0] == None
-    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 2, 5)
-    assert select_df.query("name == 'Артём'")['end_date'].iloc[0] == datetime.date(2023, 2, 6)
+    assert select_df.query("genre_name == 'Диалог'")['rank'].iloc[0] == 2
+    assert select_df.query("genre_name == 'Диалог'")['count'].iloc[0] == 1
     
-    assert select_df.query("name == 'Альбина'")['surname'].iloc[0] == 'Рухадзе'
-    assert select_df.query("name == 'Альбина'")['begin_date'].iloc[0] == datetime.date(2023, 3, 5)
-    assert select_df.query("name == 'Альбина'")['end_date'].iloc[0] == datetime.date(2023, 3, 6)
+    assert select_df.query("genre_name == 'Трагедия'")['rank'].iloc[0] == 2
+    assert select_df.query("genre_name == 'Трагедия'")['count'].iloc[0] == 1
 
-    assert select_df.query("name == 'Артём'")['surname'].iloc[0] == None
-    assert select_df.query("name == 'Артём'")['begin_date'].iloc[0] == datetime.date(2023, 2, 5)
-    assert select_df.query("name == 'Артём'")['end_date'].iloc[0] == datetime.date(2023, 2, 6)
-    
-    assert select_df.query("name == 'Александр'")['surname'].iloc[0] == 'Левин'
-    assert select_df.query("name == 'Александр'")['begin_date'].iloc[0] == datetime.date(2023, 10, 6)
-    assert select_df.query("name == 'Александр'")['end_date'].iloc[0] == datetime.date(2023, 10, 8)
+    assert select_df.query("genre_name == 'Роман в стихах'")['rank'].iloc[0] == 2
+    assert select_df.query("genre_name == 'Роман в стихах'")['count'].iloc[0] == 1
