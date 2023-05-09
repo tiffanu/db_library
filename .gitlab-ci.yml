@@ -98,3 +98,23 @@ tasks from 3rd to 11th:
     - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view1.sql"
     - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view1.sql" pytest ${TESTS_DIR}/test_view1.py
 
+    - echo "Получение сводной таблицы с технической информацией для отображения пользовательской информации о наличии книг в библиотеке"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view2.sql"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view2.sql" pytest ${TESTS_DIR}/test_view2.py
+
+    - echo "Сокрытие поля с персональными данными посетителей из таблицы Reserve для отображения информации о брони"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view3.sql"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view3.sql" pytest ${TESTS_DIR}/test_view3.py
+
+    - echo "Получение сводной таблицы, содержащей информацию о самых ходовых жанрах в библиотеке. Отсортируем по убыванию результирующей колонки"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view4.sql"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view4.sql" pytest ${TESTS_DIR}/test_view4.py
+
+    - echo "Сокрытие полей с технической информацией о расположении книг"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view5.sql"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view5.sql" pytest ${TESTS_DIR}/test_view5.py
+
+    - echo "Получение сводной таблицы о самых частых посетителях"
+    - python3 ${PYPSQL} --file="${SCRIPTS_DIR}/library_views/library_view6.sql"
+    - SCRIPT_PATH="${SCRIPTS_DIR}/library_views/library_view6.sql" pytest ${TESTS_DIR}/test_view6.py
+
