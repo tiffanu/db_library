@@ -21,7 +21,7 @@ def select_df(select_script, sqlalchemy_conn):
 
 def test4(select_df):
     assert select_df.query("genre_id == 1")['genre_name'].iloc[0] == 'Роман'
-    assert select_df.query("genre_id == 1")['total_reserved'].iloc[0] == 5
+    assert select_df.query("genre_id == 1")['total_reserved'].iloc[0] == 4
 
     assert select_df.query("genre_id == 4")['genre_name'].iloc[0] == 'Трагедия'
     assert select_df.query("genre_id == 4")['total_reserved'].iloc[0] == 1
