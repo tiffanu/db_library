@@ -1,7 +1,7 @@
 -- Получение сводной таблицы, содержащей информацию
 -- о самых ходовых жанрах в библиотеке.
 -- Отсортируем по убыванию результирующей колонки
-create view library.popular_genres as
+create or replace view library.popular_genres as
 with 
 	book_reserved as
 			(select b.book_id, title, count(*) as total_reserved

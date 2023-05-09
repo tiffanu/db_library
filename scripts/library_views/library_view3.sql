@@ -1,6 +1,6 @@
 -- Сокрытие поля с персональными данными посетителей 
 -- из таблицы Reserve для отображения информации о брони
-create view library.res_info as
+create or replace view library.res_info as
 select distinct on (name, surname) 
 	   res_id,
 	   name,

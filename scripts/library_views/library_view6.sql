@@ -1,5 +1,5 @@
 -- Получение сводной таблицы о самых частых посетителях
-create view library.clients_view as
+create or replace view library.clients_view as
 select name, surname, count(*) as books_reserved
 from library.Reserve r
 join library.Book_Reserve br on br.res_id = r.res_id

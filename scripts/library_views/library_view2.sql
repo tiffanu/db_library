@@ -1,6 +1,6 @@
 -- Получение сводной таблицы с технической информацией для отображения
 -- пользовательской информации о наличии книг в библиотеке
-create view library.books_view as
+create or replace view library.books_view as
 with 
 	reserved_books as (select b.book_id,
 						   case when begin_date <= now() and now() <= end_date then 1
