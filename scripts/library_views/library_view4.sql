@@ -16,3 +16,5 @@ join library.Book_Genre bg on b_res.book_id = bg.book_id
 join library.Genre g on bg.genre_id = g.genre_id
 group by g.genre_id
 order by total_reserved desc;
+
+select * from library.popular_genres;

@@ -7,3 +7,5 @@ select distinct on (name, surname)
 	   surname,
 	   substring(phone, 1, position('-' in phone) + 4) || '***-**-**' as phone
 from library.Reserve;
+
+select * from library.res_info;

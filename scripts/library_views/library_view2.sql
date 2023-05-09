@@ -21,3 +21,5 @@ select t.book_id,
 	   end as in_stock
 from library.book b 
 join total_res t on b.book_id = t.book_id;
+
+select * from library.books_view;

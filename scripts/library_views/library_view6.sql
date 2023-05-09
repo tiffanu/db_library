@@ -5,3 +5,5 @@ from library.Reserve r
 join library.Book_Reserve br on br.res_id = r.res_id
 group by (name, surname, address)
 order by count(*) desc;
+
+select * from library.clients_view;
