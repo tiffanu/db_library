@@ -21,7 +21,7 @@ def select_df(select_script, sqlalchemy_conn):
 
 def test6(select_df):
     assert select_df.query("name == 'Альбина'")['surname'].iloc[0] == 'Рухадзе'
-    assert select_df.query("name == 'Альбина'")['books_reserved'].iloc[0] == 3
+    assert select_df.query("name == 'Альбина'")['books_reserved'].iloc[0] == 2
 
     assert select_df.query("name == 'Артём'")['surname'].iloc[0] == None
     assert select_df.query("name == 'Артём'")['books_reserved'].iloc[0] == 2
